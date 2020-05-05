@@ -40,24 +40,19 @@ post '/articles' do
 
 
   get '/articles/:id' do
-  # binding.pry
     @article = Article.find(params[:id])
     erb :show
   end
 
 get '/articles/:id/edit' do
     @article = Article.find(params[:id])
-  # binding.pry
   erb :edit
 end
 
 patch '/articles/:id' do
-    # binding.pry
     @article = Article.find(params[:id])
     @article.update(title: params[:title], content: params[:content])
-
   redirect to "/articles/#{@article.id}"
-
   erb :show
 end
 
