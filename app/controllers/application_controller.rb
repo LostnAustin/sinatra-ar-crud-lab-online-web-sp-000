@@ -52,7 +52,7 @@ get '/articles/:id/edit' do
 end
 
 patch '/articles/:id' do
-    # binding.pry
+    binding.pry
   @article = Article.find(params[:id])
   @article.title = params[:title]
   @article.content = params[:content]
