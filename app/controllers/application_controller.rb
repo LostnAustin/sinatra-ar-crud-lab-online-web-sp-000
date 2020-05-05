@@ -57,7 +57,7 @@ patch '/articles/:id' do
   # Article.save
    @article.update(title: params[:title], content: params[:content])
 
-  redirect to "/articles/#{@ar.id}"
+  redirect to "/articles/#{@article.id}"
 
   erb :show
 end
