@@ -62,7 +62,8 @@ patch '/articles/:id' do
 end
 
   delete '/articles/:id' do
-    Article.clear
+    @article = Article.find(params[:id])
+    @article.clear
     erb :show
   end
 
