@@ -53,9 +53,8 @@ end
 
 patch '/articles/:id' do
     # binding.pry
-  @article = Article.find(params[:id])
-  # Article.save
-   @article.update(title: params[:title], content: params[:content])
+    @article = Article.find(params[:id])
+    @article.update(title: params[:title], content: params[:content])
 
   redirect to "/articles/#{@article.id}"
 
