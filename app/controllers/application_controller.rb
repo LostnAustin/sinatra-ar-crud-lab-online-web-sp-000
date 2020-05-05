@@ -54,10 +54,8 @@ end
 patch '/articles/:id' do
     binding.pry
   @article = Article.find(params[:id])
-  @article.title = params[:title]
-  @article.content = params[:content]
   # Article.save
-   @article.save
+   @article.update(title: params[:title], content: [:content])
   redirect to "/articles/:id"
 
   erb :show
