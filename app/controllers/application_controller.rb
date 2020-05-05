@@ -26,12 +26,7 @@ post '/articles' do
 
   end
 
-  # get '/show' do
-  #   erb :'/views/show'
-  # end
-
   get '/articles' do
-    # binding.pry
       @articles = Article.all
       @title = params[:title]
       @content = params[:content]
